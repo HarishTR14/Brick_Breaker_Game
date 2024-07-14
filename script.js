@@ -32,8 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ballDY = -ballDY;
     }
     if (ballY >= frame1.clientHeight - ball.clientHeight) {
-      alert("Game Over!");
-      resetGame();
+      gameOver();
     }
 
     if (
@@ -57,6 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
         block.style.visibility = "hidden"; // Hide the block
         currentScore++;
         updateScores();
+
+        // Check if all blocks are hit
+        if (document.querySelectorAll(".block:not(.hit)").length === 0) {
+          youWon();
+        }
       }
     });
 
@@ -86,8 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
     updateScores();
     blocks.forEach((block) => {
       block.classList.remove("hit");
-      block.style.visibility = "visible"; // Make the blocks visible again
+      block.style.visibility = "visible";
     });
+  }
+
+  function gameOver() {
+    alert("Game Over!");
+    resetGame();
+  }
+
+  function youWon() {
+    alert("You Won! want to play again?");
+    resetGame();
   }
 
   document.addEventListener("keydown", moveHitter);
