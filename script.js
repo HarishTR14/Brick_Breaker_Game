@@ -70,10 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function moveHitter(e) {
-    if (e.key === "ArrowLeft" && hitterX > 0) {
+    if ((e.key === "ArrowLeft" || e.key === "a") && hitterX > 0) {
       hitterX -= 10;
     } else if (
-      e.key === "ArrowRight" &&
+      (e.key === "ArrowRight" || e.key === "d") &&
       hitterX < frame1.clientWidth - hitter.clientWidth
     ) {
       hitterX += 10;
