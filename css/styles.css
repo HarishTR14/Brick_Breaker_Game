@@ -67,8 +67,8 @@ body {
   left: 0.5%;
   width: 150px;
   height: 25px;
-  border: 1px solid black; /* Adjust border for better visibility */
-  border-radius: 2px; /* Add border radius for smoother appearance */
+  border: 1px solid black;
+  border-radius: 2px;
   background-color: white;
   z-index: 2;
   display: inline-block;
@@ -141,5 +141,185 @@ body {
   text-align: center;
   z-index: 3;
   display: flex;
-  align-items: center; /* Vertically center the text */
+  align-items: center;
+}
+
+.body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.frame1 {
+  position: absolute;
+  height: 100%;
+  width: 81%;
+  background-color: black;
+  border-radius: 2px;
+  border: 2px solid black;
+  z-index: 1;
+  padding-top: 5px;
+}
+
+.frame2 {
+  position: absolute;
+  height: 100%;
+  width: 19%;
+  right: 0;
+  background-color: black;
+  border-radius: 2px;
+  border: 2px solid black;
+  z-index: 1;
+}
+
+.lines {
+  position: absolute;
+  height: 100%;
+  width: 3px;
+  left: 81.5%;
+  border-left: 2px dashed white;
+  z-index: 2;
+}
+
+.lines2 {
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+  border-bottom: 2px dashed white;
+  z-index: 2;
+}
+
+.hitter {
+  position: absolute;
+  width: 120px;
+  height: 20px;
+  bottom: 10%;
+  background-color: white;
+  left: 35%;
+  z-index: 4;
+}
+
+.ball {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 50%;
+  background-color: white;
+  left: 37%;
+  z-index: 2;
+}
+
+.block {
+  position: relative;
+  left: 0.5%;
+  width: 150px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: white;
+  z-index: 2;
+  display: inline-block;
+}
+
+.highscore,
+.currentscore {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-size: large;
+  font-family: verdana, sans-serif;
+  z-index: 3;
+  border: 2px dashed white;
+}
+
+.highscore {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  top: 15%;
+  left: 17%;
+  color: white;
+  font-size: large;
+  text-align: center;
+  border: 2px dashed white;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hstext {
+  position: absolute;
+  top: 8%;
+  left: 17%;
+  color: white;
+  font-size: large;
+  text-align: center;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+}
+
+.currentscore {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  top: 40%;
+  left: 17%;
+  color: white;
+  font-size: large;
+  text-align: center;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cstext {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  top: 33%;
+  left: 17%;
+  color: white;
+  font-size: large;
+  text-align: center;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+}
+
+.instruction {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5rem;
+
+  border: 2px dashed white;
+  padding: 10px;
+
+  z-index: 5;
+  opacity: 0;
+  animation: fadeInOut 5s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
